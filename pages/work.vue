@@ -49,7 +49,7 @@
               <Icon name="lucide:user" class="w-5 h-5 text-blue-400" />
               Role
             </h3>
-            <p class="text-gray-400">Frontend Developer & UI/UX Designer</p>
+            <p class="text-gray-400">Full Stack Developer & UI/UX Designer</p>
           </div>
           <div class="space-y-2">
             <h3 class="text-lg font-medium text-gray-300 flex items-center gap-2">
@@ -144,7 +144,7 @@
           <div class="relative group">
             <div class="absolute -inset-1 bg-gradient-to-r from-white/5 to-white/10 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
             <div class="relative flex items-center justify-end">
-              <div class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/80 backdrop-blur-sm p-6 rounded-r-xl border border-white/10 w-[25%] transform -translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+              <div class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/80 backdrop-blur-sm p-6 rounded-r-xl border border-white/10 w-[25%] transform -translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 z-10">
                 <h4 class="text-lg font-medium text-white mb-2">Main Application</h4>
                 <p class="text-sm text-gray-300">Advanced AI assistance for automated medical documentation and real-time suggestions</p>
               </div>
@@ -165,13 +165,29 @@
           </h3>
           <div class="flex flex-wrap gap-3">
             <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
+              <Icon name="logos:nuxt-icon" class="w-4 h-4" />
+              Nuxt.js
+            </span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
               <Icon name="logos:vue" class="w-4 h-4" />
               Vue.js
             </span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">TypeScript</span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Node.js</span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">MongoDB</span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">OpenAI API</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
+              <Icon name="logos:firebase" class="w-4 h-4" />
+              Firebase
+            </span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
+              <Icon name="logos:nodejs-icon" class="w-4 h-4" />
+              Node.js
+            </span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
+              <Icon name="logos:openai-icon" class="w-4 h-4" />
+              OpenAI
+            </span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
+              <Icon name="logos:typescript-icon" class="w-4 h-4" />
+              TypeScript
+            </span>
           </div>
         </div>
 
@@ -245,7 +261,7 @@
                 <Icon name="lucide:user" class="w-5 h-5 text-purple-400" />
                 Role
               </h3>
-              <p class="text-gray-400">Frontend Developer</p>
+              <p class="text-gray-400">Full Stack Developer</p>
             </div>
             <div class="space-y-2">
               <h3 class="text-lg font-medium text-gray-300 flex items-center gap-2">
@@ -312,13 +328,46 @@
               <Icon name="logos:angular-icon" class="w-4 h-4" />
               Angular
             </span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">TypeScript</span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">HTML/CSS</span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Salesforce</span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">MuleSoft</span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Jira</span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300">Figma</span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
+              <Icon name="logos:typescript-icon" class="w-4 h-4" />
+              TypeScript
+            </span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
+              <Icon name="logos:html-5" class="w-4 h-4" />
+              HTML
+            </span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
+              <Icon name="logos:css-3" class="w-4 h-4" />
+              CSS
+            </span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
+              <Icon name="logos:salesforce" class="w-4 h-4" />
+              Salesforce
+            </span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
+              <Icon name="logos:mulesoft" class="w-4 h-4" />
+              MuleSoft
+            </span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
+              <Icon name="logos:jira" class="w-4 h-4" />
+              Jira
+            </span>
+            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
+              <Icon name="logos:figma" class="w-4 h-4" />
+              Figma
+            </span>
           </div>
+        </div>
+
+        <!-- Professional Reference Card -->
+        <div class="space-y-4 p-6 rounded-xl bg-white/5 border border-white/10">
+          <div class="flex items-center gap-3">
+            <Icon name="lucide:mail" class="w-5 h-5 text-purple-400" />
+            <h3 class="text-lg font-medium text-gray-200">Professional Reference</h3>
+          </div>
+          <p class="text-gray-300">
+            Professional references from Onlia are available upon request. Please note that I would need to notify my current employer before providing contact information.
+          </p>
         </div>
       </div>
     </div>

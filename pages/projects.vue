@@ -174,12 +174,12 @@
           </div>
           
           <p class="text-gray-300 leading-relaxed">
-            This project is currently in an archived state. Supabase automatically deactivates databases for unused projects, 
-            which means some functionality (like authentication and data storage) won't work.
+            The live demo is currently unavailable as the Supabase database has been deactivated. While you can clone and run the project locally, 
+            full functionality won't be available due to the offline database.
           </p>
           
           <p class="text-gray-300 leading-relaxed">
-            However, you can still explore the UI and overall design of the application.
+            You can still review the code structure and implementation details in the GitHub repository.
           </p>
 
           <div class="flex justify-end gap-3 pt-4">
@@ -190,11 +190,11 @@
               Cancel
             </button>
             <a 
-              href="https://github.com/vittorio-sh?tab=overview&from=2024-11-01&to=2024-11-14" 
+              href="https://github.com/vittorio-sh/fitvault" 
               target="_blank"
               class="px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 text-sm text-orange-400 hover:bg-orange-500/20 transition-colors"
             >
-              Visit Site
+              View Repository
             </a>
           </div>
         </div>

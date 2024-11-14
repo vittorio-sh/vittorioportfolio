@@ -4,6 +4,15 @@ import { cn } from '@/lib/utils'
 
 const route = useRoute()
 
+// Updated color mapping for each route
+const routeColors = {
+  '/dashboard': 'text-white hover:text-white bg-white/10',
+  '/work': 'text-blue-400 hover:text-blue-400 bg-blue-500/10',
+  '/projects': 'text-orange-400 hover:text-orange-400 bg-orange-500/10',
+  '/profile': 'text-emerald-400 hover:text-emerald-400 bg-emerald-500/10',
+  '/contact': 'text-purple-400 hover:text-purple-400 bg-purple-500/10'
+}
+
 const navItems = [
   {
     name: 'Home',
@@ -11,14 +20,14 @@ const navItems = [
     icon: 'lucide:home',
   },
   {
-    name: 'Projects',
-    href: '/projects',
-    icon: 'lucide:folder-git',
-  },
-  {
     name: 'Work',
     href: '/work',
     icon: 'lucide:briefcase',
+  },
+  {
+    name: 'Projects',
+    href: '/projects',
+    icon: 'lucide:folder-git',
   },
   {
     name: 'Profile',
@@ -49,10 +58,10 @@ const navItems = [
             variant="ghost"
             size="icon"
             :class="cn(
-              'rounded-full transition-colors hover:bg-white/10 hover:text-white w-9 h-9',
+              'rounded-full transition-colors w-9 h-9',
               route.path === item.href
-                ? 'bg-white/10 text-white'
-                : 'text-gray-500'
+                ? routeColors[item.href]
+                : 'text-gray-500 hover:bg-white/10 hover:text-white'
             )"
           >
             <Icon :name="item.icon" class="h-5 w-5" />
@@ -71,10 +80,7 @@ const navItems = [
 </template>
 
 <style scoped>
-.router-link-active button {
-  @apply bg-white/10 text-white;
-}
-
+/* Remove the conflicting router-link-active style */
 /* Smooth fade for hover label */
 .group span {
   transition: opacity 0.2s ease;

@@ -1,12 +1,11 @@
 <template>
   <div class="h-screen bg-black text-white overflow-hidden relative">
-    <!-- Subtle background pattern -->
-    <div class="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]"></div>
+    <!-- Shine effect background -->
+    <div class="absolute inset-0">
+      <div class="absolute inset-0 bg-gradient-to-tr from-white/[0.03] via-transparent to-white/[0.03] animate-shine"></div>
+    </div>
     <div class="absolute inset-0 bg-gradient-to-tr from-black via-black/98 to-gray-900/20"></div>
     
-    <!-- Animated Logos -->
-    <AnimatedLogos />
-
     <!-- Main content -->
     <div class="relative h-full flex flex-col items-center justify-center px-6">
       <div class="w-full max-w-4xl text-center space-y-8">
@@ -33,8 +32,8 @@
           <Button asChild 
             class="relative group overflow-hidden bg-black hover:bg-black/90 text-white border border-white/20 px-8 py-6 rounded-xl
                    transition-all duration-300 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-            <NuxtLink to="/projects" class="flex items-center gap-2">
-              <span class="relative z-10 font-medium">View Work</span>
+            <NuxtLink to="/work" class="flex items-center gap-2">
+              <span class="relative z-10 font-medium">View Work Experience</span>
               <Icon name="lucide:arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </NuxtLink>
           </Button>
@@ -55,16 +54,10 @@
 
 <script setup lang="ts">
 import { Button } from '@/components/ui/button'
-import AnimatedLogos from '@/components/AnimatedLogos.vue'
 </script>
 
 <style scoped>
-.bg-grid-white {
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-}
-
-/* Optional: Add a subtle animation to the gradient */
+/* Name gradient animation */
 @keyframes shine {
   from {
     background-position: 200% center;
@@ -77,6 +70,20 @@ import AnimatedLogos from '@/components/AnimatedLogos.vue'
 h1 span {
   background-size: 200% auto;
   animation: shine 10s linear infinite;
+}
+
+/* Background shine animation */
+@keyframes backgroundShine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shine {
+  animation: backgroundShine 8s linear infinite;
 }
 
 /* Button hover effects */
@@ -100,7 +107,7 @@ h1 span {
   left: 100%;
 }
 
-/* Add subtle pulse animation to the white button */
+/* White button pulse animation */
 @keyframes subtle-pulse {
   0%, 100% {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);

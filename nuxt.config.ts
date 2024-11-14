@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     'nuxt-icon'
   ],
   vite: {
-    assetsInclude: ['**/*.MOV'], // Add this line to handle MOV files
+    assetsInclude: ['**/*.JPG', '**/*.jpg'], // Add this line
   },
   colorMode: {
     classSuffix: '',
