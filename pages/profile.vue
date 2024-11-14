@@ -13,11 +13,7 @@
             <!-- Profile Image -->
             <div class="relative group">
               <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500/20 to-emerald-500/10 rounded-full blur opacity-75"></div>
-              <img 
-                src="/imgg/profile/profilepic.jpg" 
-                alt="Vittorio Shiffman"
-                class="relative w-48 h-48 object-cover rounded-full border-2 border-emerald-500/20"
-              />
+              
             </div>
             
             <!-- Name and Location -->
