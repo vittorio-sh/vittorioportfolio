@@ -129,7 +129,7 @@
             <div class="absolute -inset-1 bg-gradient-to-r from-white/10 to-white/5 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
             <div class="relative flex items-center">
               <img 
-                src="~/assets/img/virtumed/virtumed-pic1.png" 
+                src="/img/virtumed/virtumed-pic1.png" 
                 alt="Virtumed Interface"
                 class="rounded-xl shadow-2xl w-[85%] transition-all duration-500 group-hover:scale-[1.02]"
               />
@@ -149,7 +149,7 @@
                 <p class="text-sm text-gray-300">Advanced AI assistance for automated medical documentation and real-time suggestions</p>
               </div>
               <img 
-                src="~/assets/img/virtumed/virtumed-pic2.png" 
+                src="/img/virtumed/virtumed-pic2.png" 
                 alt="Virtumed AI Integration"
                 class="rounded-xl shadow-2xl w-[85%] transition-all duration-500 group-hover:scale-[1.02]"
               />
