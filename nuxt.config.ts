@@ -14,7 +14,7 @@ export default defineNuxtConfig({
     build: {
       rollupOptions: {
         external: [
-          '/img/**/*.png',
+          '/img/virtumed/virtumed-pic1.PNG',
           '/img/**/*.jpg',
           '/img/**/*.JPG',
           '/img/**/*.PNG'
