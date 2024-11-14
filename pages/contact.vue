@@ -170,7 +170,23 @@ const sendEmail = () => {
     body += ` from ${formData.value.company}`
   }
   
-  body += `.\n\nI would like to connect with you regarding ${formData.value.purpose.title.toLowerCase()}.\n\nBest regards,\n${formData.value.name}`
+  // Customize message based on purpose
+  let purposeMessage = ''
+  switch (formData.value.purpose.id) {
+    case 'connect':
+      purposeMessage = "I'd love to connect and have a chat with you."
+      break
+    case 'hire':
+      purposeMessage = "I'm reaching out regarding a potential employment opportunity at " + 
+        (formData.value.company ? formData.value.company : "our company") + "."
+      break
+    case 'contract':
+      purposeMessage = "I'm interested in discussing a contract project " + 
+        (formData.value.company ? "for " + formData.value.company : "with you") + "."
+      break
+  }
+  
+  body += `.\n\n${purposeMessage}\n\nBest regards,\n${formData.value.name}`
   
   const mailtoLink = `mailto:vittorio.shiffman@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`
   window.location.href = mailtoLink
