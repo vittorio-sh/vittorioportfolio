@@ -30,12 +30,22 @@ export default defineNuxtConfig({
     componentDir: './components/ui'
   },
   nitro: {
-    preset: 'vercel',
-    static: true
+    preset: 'vercel-edge',
+    prerender: {
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/work',
+        '/projects',
+        '/profile',
+        '/contact'
+      ]
+    }
   },
   app: {
     baseURL: '/',
     buildAssetsDir: '/_nuxt/',
+    cdnURL: process.env.NUXT_PUBLIC_CDN_URL || '',
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
