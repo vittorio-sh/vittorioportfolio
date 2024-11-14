@@ -10,7 +10,7 @@ export default defineNuxtConfig({
     'nuxt-icon'
   ],
   vite: {
-    assetsInclude: ['**/*.JPG', '**/*.jpg'], // Add this line
+    assetsInclude: ['**/*.JPG', '**/*.jpg', '**/*.png', '**/*.PNG'],
   },
   colorMode: {
     classSuffix: '',
@@ -28,5 +28,26 @@ export default defineNuxtConfig({
      * @default "~/components/ui"
      */
     componentDir: './components/ui'
+  },
+  nitro: {
+    preset: 'vercel',
+    static: true
+  },
+  app: {
+    baseURL: '/',
+    buildAssetsDir: '/_nuxt/',
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
+    }
+  },
+  experimental: {
+    payloadExtraction: false,
+    inlineSSRStyles: false
+  },
+  runtimeConfig: {
+    public: {
+      baseURL: process.env.BASE_URL || 'http://localhost:3000'
+    }
   }
 })
