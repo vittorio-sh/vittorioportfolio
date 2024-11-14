@@ -34,6 +34,7 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: false,
       routes: [
+        '/',
         '/work',
         '/projects',
         '/profile',
@@ -41,6 +42,9 @@ export default defineNuxtConfig({
         '/dashboard'
       ]
     }
+  },
+  routeRules: {
+    '/': { redirect: '/work' }
   },
   app: {
     baseURL: '/',
