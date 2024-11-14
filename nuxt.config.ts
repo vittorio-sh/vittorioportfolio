@@ -11,6 +11,16 @@ export default defineNuxtConfig({
   ],
   vite: {
     assetsInclude: ['**/*.JPG', '**/*.jpg', '**/*.png', '**/*.PNG'],
+    build: {
+      rollupOptions: {
+        external: [
+          '/img/**/*.png',
+          '/img/**/*.jpg',
+          '/img/**/*.JPG',
+          '/img/**/*.PNG'
+        ]
+      }
+    }
   },
   colorMode: {
     classSuffix: '',
