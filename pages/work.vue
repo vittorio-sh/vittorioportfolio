@@ -1,13 +1,13 @@
 <template>
   <div class="min-h-screen bg-black text-white overflow-hidden relative">
-    <!-- Scroll Progress Indicator -->
-    <div class="fixed left-8 top-1/2 -translate-y-1/2 h-[60vh] w-[2px] bg-white/10">
+    <!-- Scroll Progress Indicator - Hide on mobile -->
+    <div class="fixed left-8 top-1/2 -translate-y-1/2 h-[60vh] w-[2px] bg-white/10 hidden md:block">
       <div 
         class="w-full bg-gradient-to-b from-white/80 to-white/20 relative"
         :style="{ height: `${scrollProgress}%` }"
       >
         <div 
-          class="absolute top-0 -right-1 w-3 h-3 rounded-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.5)]"
+          class="scroll-indicator-dot absolute top-0 -right-1 w-3 h-3 rounded-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.5)]"
         ></div>
       </div>
     </div>
@@ -16,26 +16,26 @@
     <div class="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]"></div>
     <div class="absolute inset-0 bg-gradient-to-tr from-black via-black/98 to-gray-900/20"></div>
 
-    <!-- Main content -->
-    <div class="relative container mx-auto px-6 py-24">
-      <div class="max-w-4xl mx-auto space-y-12">
+    <!-- Main content - Adjust padding for mobile -->
+    <div class="relative container mx-auto px-4 sm:px-6 py-12 sm:py-24">
+      <div class="max-w-4xl mx-auto space-y-8 sm:space-y-12">
         <!-- Header with Project Badge -->
-        <div class="space-y-4">
-          <div class="flex items-center gap-3 mb-6">
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-blue-400 flex items-center gap-2">
-              <Icon name="lucide:activity" class="w-4 h-4" />
+        <div class="space-y-3 sm:space-y-4">
+          <div class="flex items-center gap-3 mb-4 sm:mb-6">
+            <span class="px-2 sm:px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm text-blue-400 flex items-center gap-2">
+              <Icon name="lucide:activity" class="w-3 h-3 sm:w-4 sm:h-4" />
               Active Project
             </span>
           </div>
-          <h1 class="text-4xl sm:text-5xl font-bold tracking-tighter">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter">
             <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-blue-200 to-blue-500">
               Virtumed
             </span>
           </h1>
-          <p class="text-xl text-gray-400">Medical Charting Software with AI Integration</p>
+          <p class="text-lg sm:text-xl text-gray-400">Medical Charting Software with AI Integration</p>
           
-          <!-- Description moved here -->
-          <p class="text-gray-300 leading-relaxed max-w-3xl">
+          <!-- Description -->
+          <p class="text-sm sm:text-base text-gray-300 leading-relaxed max-w-3xl">
             Collaborated with a US-based neurosurgeon and a Canadian PhD student to develop an innovative medical charting 
             software. The platform integrates AI technology to streamline the patient documentation process for healthcare 
             professionals.
@@ -122,20 +122,20 @@
           </div>
         </div>
 
-        <!-- Project Images - Modernized -->
-        <div class="space-y-16 mt-12">
+        <!-- Project Images - Adjust for mobile -->
+        <div class="space-y-12 sm:space-y-16 mt-8 sm:mt-12">
           <!-- First Image Section -->
           <div class="relative group">
             <div class="absolute -inset-1 bg-gradient-to-r from-white/10 to-white/5 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-            <div class="relative flex items-center">
+            <div class="relative flex flex-col sm:flex-row items-center">
               <img 
                 src="/img/virtumed/v2.png" 
                 alt="Virtumed Interface"
-                class="rounded-xl shadow-2xl w-[85%] transition-all duration-500 group-hover:scale-[1.02]"
+                class="rounded-xl shadow-2xl w-full sm:w-[85%] transition-all duration-500 group-hover:scale-[1.02]"
               />
-              <div class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/80 backdrop-blur-sm p-6 rounded-l-xl border border-white/10 w-[25%] transform translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
-                <h4 class="text-lg font-medium text-white mb-2">Integration App</h4>
-                <p class="text-sm text-gray-300">Advanced configuration platform for IT staff to design and manage data flow nodes, defining charting workflows and data processing pipelines.</p>
+              <div class="relative sm:absolute right-0 top-0 sm:top-1/2 sm:-translate-y-1/2 bg-black/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-l-xl border border-white/10 w-full sm:w-[25%] mt-4 sm:mt-0 transform sm:translate-x-4 opacity-100 sm:opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+                <h4 class="text-base sm:text-lg font-medium text-white mb-2">Integration App</h4>
+                <p class="text-xs sm:text-sm text-gray-300">Advanced configuration platform for IT staff to design and manage data flow nodes, defining charting workflows and data processing pipelines.</p>
               </div>
             </div>
           </div>
@@ -143,52 +143,46 @@
           <!-- Second Image Section -->
           <div class="relative group">
             <div class="absolute -inset-1 bg-gradient-to-r from-white/5 to-white/10 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
-            <div class="relative flex items-center justify-end">
-              <div class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/80 backdrop-blur-sm p-6 rounded-r-xl border border-white/10 w-[25%] transform -translate-x-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 z-10">
-                <h4 class="text-lg font-medium text-white mb-2">Main Application</h4>
-                <p class="text-sm text-gray-300">Advanced AI assistance for automated medical documentation and real-time suggestions</p>
+            <div class="relative flex flex-col-reverse sm:flex-row items-center justify-end">
+              <div class="relative sm:absolute left-0 top-0 sm:top-1/2 sm:-translate-y-1/2 bg-black/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-r-xl border border-white/10 w-full sm:w-[25%] mt-4 sm:mt-0 transform sm:-translate-x-4 opacity-100 sm:opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500 z-10">
+                <h4 class="text-base sm:text-lg font-medium text-white mb-2">Main Application</h4>
+                <p class="text-xs sm:text-sm text-gray-300">Advanced AI assistance for automated medical documentation and real-time suggestions</p>
               </div>
               <img 
                 src="/img/virtumed/v2.png" 
                 alt="Virtumed AI Integration"
-                class="rounded-xl shadow-2xl w-[85%] transition-all duration-500 group-hover:scale-[1.02]"
+                class="rounded-xl shadow-2xl w-full sm:w-[85%] transition-all duration-500 group-hover:scale-[1.02]"
               />
             </div>
           </div>
         </div>
 
-        <!-- Tech Stack -->
-        <div class="space-y-4">
-          <h3 class="text-xl font-medium text-gray-200 flex items-center gap-2">
-            <Icon name="lucide:code-2" class="w-5 h-5" />
-            Technologies Used
-          </h3>
-          <div class="flex flex-wrap gap-3">
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
-              <Icon name="logos:nuxt-icon" class="w-4 h-4" />
-              Nuxt.js
-            </span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
-              <Icon name="logos:vue" class="w-4 h-4" />
-              Vue.js
-            </span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
-              <Icon name="logos:firebase" class="w-4 h-4" />
-              Firebase
-            </span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
-              <Icon name="logos:nodejs-icon" class="w-4 h-4" />
-              Node.js
-            </span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
-              <Icon name="logos:openai-icon" class="w-4 h-4" />
-              OpenAI
-            </span>
-            <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 flex items-center gap-2">
-              <Icon name="logos:typescript-icon" class="w-4 h-4" />
-              TypeScript
-            </span>
-          </div>
+        <!-- Tech Stack - Adjust spacing -->
+        <div class="flex flex-wrap gap-2 sm:gap-3">
+          <span class="px-2 sm:px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm text-gray-300 flex items-center gap-2">
+            <Icon name="logos:nuxt-icon" class="w-3 h-3 sm:w-4 sm:h-4" />
+            Nuxt.js
+          </span>
+          <span class="px-2 sm:px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm text-gray-300 flex items-center gap-2">
+            <Icon name="logos:vue" class="w-3 h-3 sm:w-4 sm:h-4" />
+            Vue.js
+          </span>
+          <span class="px-2 sm:px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm text-gray-300 flex items-center gap-2">
+            <Icon name="logos:firebase" class="w-3 h-3 sm:w-4 sm:h-4" />
+            Firebase
+          </span>
+          <span class="px-2 sm:px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm text-gray-300 flex items-center gap-2">
+            <Icon name="logos:nodejs-icon" class="w-3 h-3 sm:w-4 sm:h-4" />
+            Node.js
+          </span>
+          <span class="px-2 sm:px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm text-gray-300 flex items-center gap-2">
+            <Icon name="logos:openai-icon" class="w-3 h-3 sm:w-4 sm:h-4" />
+            OpenAI
+          </span>
+          <span class="px-2 sm:px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm text-gray-300 flex items-center gap-2">
+            <Icon name="logos:typescript-icon" class="w-3 h-3 sm:w-4 sm:h-4" />
+            TypeScript
+          </span>
         </div>
 
         <!-- Beta Access & Contact -->

@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 const route = useRoute()
+const isMobileMenuOpen = ref(false)
 
 // Updated color mapping for each route
 const routeColors = {
@@ -40,10 +41,20 @@ const navItems = [
     icon: 'lucide:mail',
   },
 ]
+
+const toggleMobileMenu = () => {
+  isMobileMenuOpen.value = !isMobileMenuOpen.value
+}
+
+// Close mobile menu when route changes
+watch(route, () => {
+  isMobileMenuOpen.value = false
+})
 </script>
 
 <template>
-  <nav class="fixed top-4 left-1/2 z-50 -translate-x-1/2 transform">
+  <!-- Desktop Navigation -->
+  <nav class="fixed top-4 left-1/2 z-50 -translate-x-1/2 transform hidden md:block">
     <div class="border-white/30 border rounded-full p-[1px]">
       <div
         class="flex items-center gap-8 rounded-full bg-black/95 px-12 py-1.5 shadow-[0_0_15px_rgba(255,255,255,0.1)] backdrop-blur-md supports-[backdrop-filter]:bg-black/80"
@@ -77,12 +88,60 @@ const navItems = [
       </div>
     </div>
   </nav>
+
+  <!-- Mobile Navigation -->
+  <div class="fixed top-4 right-4 z-50 md:hidden">
+    <!-- Mobile Menu Button -->
+    <Button
+      variant="ghost"
+      size="icon"
+      class="rounded-full bg-black/95 border border-white/30 w-10 h-10"
+      @click="toggleMobileMenu"
+    >
+      <Icon 
+        :name="isMobileMenuOpen ? 'lucide:x' : 'lucide:menu'" 
+        class="h-5 w-5 text-white"
+      />
+    </Button>
+
+    <!-- Mobile Menu Dropdown -->
+    <Transition
+      enter-active-class="transition duration-200 ease-out"
+      enter-from-class="transform scale-95 opacity-0"
+      enter-to-class="transform scale-100 opacity-100"
+      leave-active-class="transition duration-150 ease-in"
+      leave-from-class="transform scale-100 opacity-100"
+      leave-to-class="transform scale-95 opacity-0"
+    >
+      <div
+        v-if="isMobileMenuOpen"
+        class="absolute top-14 right-0 w-48 py-2 bg-black/95 backdrop-blur-md rounded-xl border border-white/10 shadow-lg"
+      >
+        <NuxtLink
+          v-for="item in navItems"
+          :key="item.name"
+          :to="item.href"
+          class="flex items-center gap-3 px-4 py-2 text-sm text-gray-300 hover:bg-white/10"
+          :class="route.path === item.href ? routeColors[item.href] : ''"
+        >
+          <Icon :name="item.icon" class="h-4 w-4" />
+          {{ item.name }}
+        </NuxtLink>
+      </div>
+    </Transition>
+  </div>
 </template>
 
 <style scoped>
-/* Remove the conflicting router-link-active style */
 /* Smooth fade for hover label */
 .group span {
   transition: opacity 0.2s ease;
+}
+
+/* Add backdrop blur support for Safari */
+@supports (backdrop-filter: blur(12px)) {
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+  }
 }
 </style>
