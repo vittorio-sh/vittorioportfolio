@@ -149,7 +149,7 @@
                 <p class="text-xs sm:text-sm text-gray-300">Advanced AI assistance for automated medical documentation and real-time suggestions</p>
               </div>
               <img 
-                src="/img/virtumed/v2.png" 
+                src="/img/virtumed/v1.png" 
                 alt="Virtumed AI Integration"
                 class="rounded-xl shadow-2xl w-full sm:w-[85%] transition-all duration-500 group-hover:scale-[1.02]"
               />

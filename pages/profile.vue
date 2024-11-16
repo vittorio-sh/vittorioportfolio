@@ -141,7 +141,7 @@
                       <h3 class="text-lg font-medium text-gray-200">Onlia Insurance</h3>
                       <span class="text-sm text-gray-400">Full-time</span>
                     </div>
-                    <span class="text-sm text-emerald-400">2024</span>
+                    <span class="text-sm text-emerald-400">2024-Present</span>
                   </div>
                   <p class="text-gray-400">Progressed from intern to Full Stack Developer, working on modernizing insurance platforms</p>
                 </div>
