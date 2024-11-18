@@ -52,7 +52,7 @@
                 </div>
                 <div class="flex items-center justify-center sm:justify-start">
                   <a 
-                    href="/resume.pdf" 
+                    href="/resume/resume.pdf" 
                     target="_blank"
                     class="flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors border border-emerald-500/20"
                   >

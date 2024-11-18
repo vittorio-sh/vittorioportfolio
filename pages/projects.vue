@@ -89,6 +89,17 @@
         <!-- Video Section -->
         <div class="space-y-6">
           <div class="relative group">
+            <!-- Loading State -->
+            <div 
+              v-if="isVideoLoading"
+              class="absolute inset-0 flex items-center justify-center bg-white/5 rounded-xl backdrop-blur-sm z-10"
+            >
+              <div class="flex flex-col items-center gap-3">
+                <div class="w-8 h-8 border-2 border-orange-400 border-t-transparent rounded-full animate-spin"></div>
+                <span class="text-sm text-gray-400">Loading video...</span>
+              </div>
+            </div>
+
             <!-- Video container -->
             <div class="relative rounded-xl overflow-hidden">
               <video 
@@ -98,6 +109,7 @@
                 muted
                 loop
                 playsinline
+                @loadeddata="isVideoLoading = false"
               >
                 <source src="/videos/demo.MOV" type="video/mp4">
                 Your browser does not support the video tag.
@@ -207,18 +219,29 @@
 const scrollProgress = ref(0)
 const isModalOpen = ref(false)
 const videoPlayer = ref(null)
+const isVideoLoading = ref(true)
 
 onMounted(() => {
   window.addEventListener('scroll', updateScrollProgress)
   if (videoPlayer.value) {
     videoPlayer.value.playbackRate = 1.5
-    // Wait for video to be loaded
-    videoPlayer.value.addEventListener('loadedmetadata', () => {
+    // Check if video is already loaded
+    if (videoPlayer.value.readyState >= 3) {
+      isVideoLoading.value = false
       videoPlayer.value.play()
         .catch(error => {
           console.log('Autoplay failed:', error)
         })
-    })
+    } else {
+      // Wait for video to be loaded
+      videoPlayer.value.addEventListener('loadeddata', () => {
+        isVideoLoading.value = false
+        videoPlayer.value.play()
+          .catch(error => {
+            console.log('Autoplay failed:', error)
+          })
+      })
+    }
   }
 })
 
@@ -290,5 +313,18 @@ const closeModal = () => {
 .archived-badge {
   animation: archivePulse 2s infinite;
   position: relative;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
 }
 </style>

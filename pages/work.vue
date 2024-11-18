@@ -131,7 +131,8 @@
               <img 
                 src="/img/virtumed/v2.png" 
                 alt="Virtumed Interface"
-                class="rounded-xl shadow-2xl w-full sm:w-[85%] transition-all duration-500 group-hover:scale-[1.02]"
+                loading="lazy"
+                class="rounded-xl shadow-2xl w-full max-w-[1200px] mx-auto object-contain transition-all duration-500 group-hover:scale-[1.02]"
               />
               <div class="relative sm:absolute right-0 top-0 sm:top-1/2 sm:-translate-y-1/2 bg-black/80 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-l-xl border border-white/10 w-full sm:w-[25%] mt-4 sm:mt-0 transform sm:translate-x-4 opacity-100 sm:opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
                 <h4 class="text-base sm:text-lg font-medium text-white mb-2">Integration App</h4>
@@ -150,8 +151,9 @@
               </div>
               <img 
                 src="/img/virtumed/v1.png" 
-                alt="Virtumed AI Integration"
-                class="rounded-xl shadow-2xl w-full sm:w-[85%] transition-all duration-500 group-hover:scale-[1.02]"
+                alt="Virtumed Interface"
+                loading="lazy"
+                class="rounded-xl shadow-2xl w-full max-w-[1200px] mx-auto object-contain transition-all duration-500 group-hover:scale-[1.02]"
               />
             </div>
           </div>
